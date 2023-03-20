@@ -1,0 +1,31 @@
+// Employees Table
+
+a) SELECT * FROM employees;
+This command to select all columns and rows from the employees table.
+
+b) SELECT name, salary FROM employees WHERE salary > 50000;
+This command to select only the name and salary columns of all employees with a salary greater than 50000.
+
+c) SELECT AVG(salary) FROM employees;
+This command calculates and selects the average salary from the employees table.
+
+d) SELECT COUNT(*) as Number_of_employees FROM employees WHERE department_id = (SELECT id FROM departments WHERE name = 'Marketing');
+
+e) UPDATE employees set salary=60000 WHERE id=1001;
+This command updates the salary column of the employee with an id of 1001 to 60000.
+
+f) DELETE FROM employees WHERE salary<30000;
+This command deletes all employees from the employees table whose salary is less than 30000.
+
+// Department Table
+a) SELECT * FROM departments;
+This command to select all columns and rows from the departments table.
+
+b) SELECT name, manager FROM departments WHERE name='Finance';
+This command to select  only the name and manager columns of the "Finance".
+
+c) SELECT departments.name, COUNT(*) as num_of_employees FROM employees JOIN departments ON employees.department_id = departments.id GROUP BY departments.name;
+This command to calculate the total number of employees in each department.
+
+d) INSERT INTO departments (name,manager) VALUES('Research', 'John Doe');
+This command to insert a new department called "Research" with a manager named "John Doe".
